@@ -35,6 +35,7 @@ class GameViewModel: ViewModel() {
 
     }
 
+//    Initialization of the view-model
     init{
         Log.d("GameFragment","GameViewModel Created")
         getNextWord()
@@ -53,5 +54,19 @@ class GameViewModel: ViewModel() {
             getNextWord()
             true
         } else false
+    }
+
+//  Helper Method to increase score
+    private fun increaseScore(){
+        _score += SCORE_INCREASE
+    }
+
+//    Helper function to check if the user inputted the correct word, if so increment the score
+    fun isUserWordCorrect(wordInputted: String): Boolean {
+        if (wordInputted.equals(currentWord, true)){
+            increaseScore()
+            return true
+        }
+        return false
     }
 }
