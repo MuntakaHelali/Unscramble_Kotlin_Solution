@@ -71,4 +71,12 @@ class GameViewModel: ViewModel() {
         }
         return false
     }
+
+//    Re-initialized the game data to restart game
+    fun reinitializeData(){
+        _score = 0
+        _currentWordCount = 0
+        wordList.clear()
+        getNextWord()
+    }
 }
