@@ -17,6 +17,7 @@
 package com.example.android.unscramble.ui.game
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,6 +47,7 @@ class GameFragment : Fragment() {
     ): View {
         // Inflate the layout XML file and return a binding object instance
         binding = GameFragmentBinding.inflate(inflater, container, false)
+        Log.d("GameFragment", "GameFragment created/re-created")
         return binding.root
     }
 
@@ -62,6 +64,11 @@ class GameFragment : Fragment() {
                 R.string.word_count, 0, MAX_NO_OF_WORDS)
     }
 
+//    Callback Method when the corresponding activity/fragment(in this case) are destroyed
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("GameFragment","GameFragment Destroyed")
+    }
     /*
     * Checks the user's word, and updates the score accordingly.
     * Displays the next scrambled word.
