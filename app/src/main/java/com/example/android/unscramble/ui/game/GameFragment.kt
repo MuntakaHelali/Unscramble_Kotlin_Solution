@@ -61,10 +61,14 @@ class GameFragment : Fragment() {
         binding.submit.setOnClickListener { onSubmitWord() }
         binding.skip.setOnClickListener { onSkipWord() }
         // Update the UI
-        updateNextWordOnScreen()
+//        updateNextWordOnScreen()
         binding.score.text = getString(R.string.score, 0)
         binding.wordCount.text = getString(
                 R.string.word_count, 0, MAX_NO_OF_WORDS)
+//        Observe the currentScrambledWord LiveData
+        viewModel.currentScrambledWord.observe(viewLifecycleOwner) { newWord ->
+            binding.textViewUnscrambledWord.text = newWord
+        }
     }
 
 //    Callback Method when the corresponding activity/fragment(in this case) are destroyed
@@ -81,7 +85,7 @@ class GameFragment : Fragment() {
         if(viewModel.isUserWordCorrect(playerWord)){
             setErrorTextField(false)
             if(viewModel.nextWord()){
-                updateNextWordOnScreen()
+//                updateNextWordOnScreen()
             }
             else{
                 showFinalScoreDialog()
@@ -99,7 +103,7 @@ class GameFragment : Fragment() {
     private fun onSkipWord() {
         if(viewModel.nextWord()){
             setErrorTextField(false)
-            updateNextWordOnScreen()
+//            updateNextWordOnScreen()
         }
         else{
             showFinalScoreDialog()
@@ -122,7 +126,7 @@ class GameFragment : Fragment() {
     private fun restartGame() {
         viewModel.reinitializeData()
         setErrorTextField(false)
-        updateNextWordOnScreen()
+//        updateNextWordOnScreen()
     }
 
     /*
@@ -147,10 +151,10 @@ class GameFragment : Fragment() {
 
     /*
      * Displays the next scrambled word on screen.
-     */
-    private fun updateNextWordOnScreen() {
-        binding.textViewUnscrambledWord.text = viewModel.currentScrambledWord
-    }
+//     */
+//    private fun updateNextWordOnScreen() {
+//        binding.textViewUnscrambledWord.text = viewModel.currentScrambledWord
+//    }
 
 //    Creates and shows an AlertDialog with the final score
     private fun showFinalScoreDialog(){
