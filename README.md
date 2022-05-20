@@ -1,13 +1,13 @@
 Unscramble App
 ===================================
 
-Starter code for Android Basics codelab - Store the data in a ViewModel
-
-Unscramble is  a single player game app that displays scrambled words. To play the game, player has
-to make a word using all the letters from the displayed scrambled word.
-
-Used in the [Android Basics with Kotlin](https://developer.android
-.com/courses/android-basics-kotlin/course) course.
+Unscramble Word Application from Android Basics Unit 3. A single player game where a word is scrambled to the user, and they can guess any number of times. Once correct they continue until they get all ten, or can decide to skip a word and move on to the next. Score is displayed on the top right, and in the top left shows what word the user is currently on. Finnaly once the game is complete, a promp will appear to show the final score, and ask if the user would like to play again or leave. 
+<br>
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/57158277/169473266-d9a32d73-ce8c-421a-9468-cc5c4596a5b1.png" width="251">
+  <img src="https://user-images.githubusercontent.com/57158277/169473396-e0b98735-1e1d-4f35-ba0c-c93a58cc3cf8.png" width="250">
+</p>
 
 License
 -------
